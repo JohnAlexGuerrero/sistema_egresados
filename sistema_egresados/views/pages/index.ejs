@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head"); %>
+</head>
+<body>
+
+    <%- include('../partials/sidebar'); %>
+        
+    <%- include('../partials/header'); %>
+   
+    <main>
+        <h2 class="dash-title">Overview</h2>
+
+            <div class="dash-cards">
+                <div class="card-single">
+                    <div class="card-body">
+                        <span class="ti-briefcase"></span>
+                        <div>
+                            <h5>Account Balance</h5>
+                            <h4>$30,659.45</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="">View All</a>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div class="card-body">
+                        <span class="ti-reload"></span>
+                        <div>
+                            <h5>Pending</h5>
+                            <h4>$19,659.45</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="">View All</a>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div class="card-body">
+                        <span class="ti-check-box"></span>
+                        <div>
+                            <h5>Processed</h5>
+                            <h4>$20,659.4</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="">View All</a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="recent">
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h3>Recent Activity</h3>
+                        <table >
+                            <thead>
+                                <tr>
+                                    <th>Project</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Team</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>App Development</td>
+                                    <td>15 Aug, 2020</td>
+                                    <td>22 Aug, 2020</td>
+                                    <td class="td-team">
+                                        <div class="img-1"></div>
+                                        <div class="img-2"></div>
+                                        <div class="img-3"></div>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">Success</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>App Development</td>
+                                    <td>15 Aug, 2020</td>
+                                    <td>22 Aug, 2020</td>
+                                    <td class="td-team">
+                                        <div class="img-1"></div>
+                                        <div class="img-2"></div>
+                                        <div class="img-3"></div>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-warning">Success</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>App Development</td>
+                                    <td>15 Aug, 2020</td>
+                                    <td>22 Aug, 2020</td>
+                                    <td class="td-team">
+                                        <div class="img-1"></div>
+                                        <div class="img-2"></div>
+                                        <div class="img-3"></div>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">Success</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="summary">
+                        <div class="summary-card">
+                            <div class="summary-single">
+                                <span class="ti-id-badge"></span>
+                                <div>
+                                    <h5>196</h5>
+                                    <small>Number off Stack</small>
+                                </div>
+                            </div>
+                            <div class="summary-single">
+                                <span class="ti-calendar"></span>
+                                <div>
+                                    <h5>196</h5>
+                                    <small>Number off leave</small>
+                                </div>
+                            </div>
+                            <div class="summary-single">
+                                <span class="ti-id-badge"></span>
+                                <div>
+                                    <h5>196</h5>
+                                    <small>Profile update request</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bday-card">
+                            <div class="bday-flex">
+                                <div class="bday-img">
+                                    <div class="bday-info">
+                                        <h5>Dwayne F. Sandre</h5>
+                                        <small>Birthday Today</small>
+                                    </div>
+                                    
+                                    <div class="text-center">
+                                        <button>
+                                            <span class="ti-gift"></span>
+                                            Wish him
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+        
+    <%- include('../partials/footer'); %>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<%- include('../partials/head'); %>
+
+  <%- include('../partials/sidebar'); %>
+
+    <%- include('../partials/header'); %>
+
+    <main>
+      <h2 class="dash-title">Información Académica</h2>
+      <section class="container">
+        <div class="activity-grid">
+          <div class="activity-card">
+            <% if( trabajos.length === 0){%>
+              <form action="/egresados/insert-laboral" method="post">
+                
+              </form>
+            <%}%>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="container">
+      
+      
+        <div class="user-info">
+          <div class="buttons-container">
+            <a href="/egresado/informacion-laboral/:id/" id="left" class="btn">Anterior</a>
+            <a href="/egresado/informacion-familiar/:id/" id="right" class="btn btn-primary">Siguiente</a>
+          </div>
+        </div>
+        
+      </div>
+        
+    </div>
+
+
+    <%- include('../partials/footer') %>

@@ -1,0 +1,87 @@
+<%- include('../partials/head'); %>
+
+<%- include('../partials/sidebar'); %>
+
+<%- include('../partials/header'); %>
+
+<main>
+    <h2 class="dash-title">Egresados</h2>
+    <section class="container">
+        <div class="activity-grid">
+            <div class="activity-card">
+                <% if (egresados.length === 0) {%>
+                    <div class="container">
+                        <div class="">
+                            <span>No hay Egresados</span>
+                            <a href="/egresados/n/informacion-basica/" class="btn btn-primary">
+                                <span class="ti-user"></span>
+                                <span>Nuevo Afiliado</span>
+                            </a>
+                        </div>
+                    </div>
+                <% }else{%>
+                <h3>Lista de Egresados</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Egresado</th>
+                            <th>Nombre</th>
+                            <th>Contacto</th>
+                            <th>Email</th>
+                            <th>Activo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% egresados.forEach((egresado)=>{ %>
+                        <tr>
+                            <td class="td-team">
+                                <div class="img-3"></div>
+                            </td>
+                            <td>
+                                <a href='/egresados/informacion-personal/<%= egresado.id_number %>' >
+                                    <%= egresado.name %> <%= egresado.lastname %>
+                                </a>
+                            </td>
+                            <td><%= egresado.phone %></td>
+                            <td><%= egresado.email %></td>
+                            <td>
+                                <span class="badge badge-success">True</span>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                <% } %>
+            </div>
+            <div class="summary">
+                <div class="summary-card">
+                    <div class="summary-single">
+                        <span class="ti-user"></span>
+                        <div>
+                            <h5><%= egresados.length %></h5>
+                            <small>Total de Egresados</small>
+                        </div>
+                    </div>
+                    <% if(egresados.length >= 1){ %>
+                        <div class="summary-single">
+                            <span class="ti-id-badge"></span>
+                            <div>
+                                <a href="/egresados/n/informacion-basica" class="btn btn-primary">
+                                    <small style="color: white;">Nuevo afiliado</small>
+                                </a>
+                            </div>
+                        </div>           
+                    <% }%>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+    <%- include('../partials/footer') %>
+</main>
+
+
+
+   

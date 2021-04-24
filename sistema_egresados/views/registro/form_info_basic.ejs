@@ -1,0 +1,116 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <title>Registro</title>
+</head>
+<body>
+-->
+<%- include('../partials/head'); %>
+
+<%- include('../partials/header'); %>
+
+<%- include('../partials/sidebar'); %>
+  <main class="page">
+    <section>
+      <div class="box">
+        <div class="fondo"></div>
+      </div>
+      <form action="/insert-egresado" method="post">
+        <div class="box-form">
+          <div class="box-row">
+            <div class="col-3">
+              <span class="title">Nombre:</span>
+              <input type="text" class="input-form" autocomplete="off" name="name" onkeyup="inputUpperCase(this)"
+                required>
+            </div>
+            <div class="col-3">
+              <span class="title">Apellido:</span>
+              <input type="text" class="input-form" autocomplete="off" name="lastname" onkeyup="inputUpperCase(this)"
+                required>
+            </div>
+            <div class="col-3">
+              <span class="title">Genero:</span>
+              <select  class="input-form" name="gender" required>
+                <option value="Null">Seleccione</option>
+                <option value="MASCULINO">Masculino</option>
+                <option value="FEMENINO">Femenino</option>
+              </select>
+            </div>
+          </div>
+          <div class="box-row">
+            <div class="col-3">
+              <span class="title">Número de Documento:</span>
+              <input type="text" class="input-form" autocomplete="off" name="document"
+                onkeypress='return validateNumber(event)' required>
+            </div>
+            <div class="col-3">
+              <span class="title">Fecha de Nacimiento:</span>
+              <input type="date" class="input-form" name="birthday" required>
+            </div>
+            <div class="col-3">
+              <span class="title">Lugar de Nacimiento:</span>
+              <input type="text" class="input-form" placeholder="Ciudad, Departamento" autocomplete="off" name="citybirth" onkeyup="inputUpperCase(this)"
+                required>
+            </div>
+          </div>
+          <div class="box-row">
+            <div class="col-3">
+              <span class="title">Telefono:</span>
+              <input type="text" class="input-form"
+               autocomplete="off"  name="phone" 
+               onkeypress="return validateNumber(event)"
+               id="idPhone" required >
+            </div>
+            <div class="col-3">
+              <span class="title">Dirección:</span>
+              <input type="text" class="input-form" autocomplete="off" name="address"  onkeyup="inputUpperCase(this)"
+                required>
+            </div>
+            <div class="col-3">
+              <span class="title">Barrio:</span>
+              <input type="text" class="input-form" autocomplete="off"  name="neighborhood" onkeyup="inputUpperCase(this)"
+                required>
+            </div>
+          </div>
+          <div class="box-row">
+            <div class="col-3">
+              <span class="title">Estado Civil:</span>
+              <select class="input-form" name="statusmarital" required>
+                <option value="0">Seleccione</option>
+                <option value="CASADO(A)">Casado(a)</option>
+                <option value="SEPARADO(A)">Separado(a)</option>
+                <option value="SOLTERO(A)">Soltero(a)</option>
+                <option value="UNION LIBRE">Unión Libre</option>
+                <option value="MADRE CABEZA DE FAMILIA">Madre Cabeza de Familia</option>
+                <option value="VIUDO(A)">Viudo(a)</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <span class="title">Email:</span>
+              <input type="email" class="input-form" autocomplete="off" name="email" onkeyup="inputUpperCase(this)"
+                required>
+            </div>
+            <div class="col-3"></div>
+          </div>
+        </div>
+      </form>
+      
+      
+      <div class="box-row">
+        <div class="container-buttons">
+          <button type="submit" class="btn btn-primary">Siguiente</button>
+        </div>
+      </div>
+    </main>
+  
+    </section>
+    
+</body>
+<script src="/static/js/main.js"></script>
+</html>
+    

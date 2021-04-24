@@ -1,0 +1,30 @@
+<%- include('../partials/head'); %>
+
+    <main style="background-color: white;">
+        <div class="login-container">
+            <div class="login-img">
+                <img src="/static/images/escud-Asociación-egresados-300x300.png" alt="" width="75%">
+            </div>
+            <div class="login-title">
+                <h2>Create una cuenta</h2>
+            </div>
+
+            <div class="login-form">
+                <form action="/signup" method="POST">
+                    <div class="form-group">
+                        <span>Email</span>
+                        <input type="email" class="form-control color-input" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <span>Crea una contraseña</span>
+                        <input type="password" class="form-control color-input" name="password1" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Crear cuenta" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <%- include('../partials/footer') %>
+    </main>

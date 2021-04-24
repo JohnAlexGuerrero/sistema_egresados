@@ -1,0 +1,81 @@
+<%- include('../partials/head'); %>
+
+  <%- include('../partials/sidebar'); %>
+
+    <%- include('../partials/header'); %>
+
+      <main style="background-color: white;">
+        <div class="container">
+          <h2 class="dash-title">Información Familiar</h2>
+          <hr>
+          <div class="container">
+            <form action="/egresados/insert-familiar/<%= egresadoId %>" method="post">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Documento</th>
+                    <th>Nombres</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Edad</th>
+                    <th>Parentesco</th>
+                    <th>Ocupacion</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tableFamily"></tbody>
+                <% if(familiares.legth===0){%>
+              </table>
+              <div class="container">
+                <span class="col-4">Registra tu nucleo familiar</span>
+                <div class="container">
+                  <div class="container">
+                    <button class="btn addFamily">
+                      <span class="ti-plus"></span>
+                      <span>Agregar Familiares</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <% }else{%>
+                <% familiares.forEach((mienbro)=>{ %>
+                  <tr>
+                    <td>
+                      <%= mienbro.nro_document %>
+                    </td>
+                    <td>
+                      <%= mienbro.name %>
+                    </td>
+                    <td>
+                      <%= mienbro.birthday %>
+                    </td>
+                    <td>
+                      <%= mienbro.age %>
+                    </td>
+                    <td>
+                      <%= mienbro.family_relationship %>
+                    </td>
+                    <td>
+                      <%= mienbro.occupation %>
+                    </td>
+                  </tr>
+                  <% })%>
+                    </tbody>
+                    </table>
+                    <div class="container">
+                      <span class="col-4">Registra tu nucleo familiar</span>
+                      <small>Para extender los beneficios que te ofrece la Asociación</small>
+                      <div class="container">
+                        <div class="container">
+                          <button class="btn addFamily">
+                            <span class="ti-plus"></span>
+                            <span>Agregar Familiares</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+            </form>
+            <% }%>
+          </div>
+
+          <%- include('../partials/footer'); %>
+      </main>

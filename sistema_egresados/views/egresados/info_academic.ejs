@@ -1,0 +1,86 @@
+<%- include('../partials/head'); %>
+
+  <%- include('../partials/sidebar'); %>
+
+  <%- include('../partials/header'); %>
+
+    <main>
+      <h2 class="dash-title">Información Académica</h2>
+      <section class="container">
+        <div class="activity-grid">
+          <div class="activity-card">
+            <form action="/egresados/insert-estudios/<%= egresadoId %>" method="post">
+              <h3>Lista de Estudios</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Titulo</th>
+                    <th>Institución</th>
+                    <th>Nivel</th>
+                    <th>Graduación</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tableID"></tbody>
+                <% if (estudios.length===0) {%>
+              </table>
+              <div class="container">
+                <span class="col-4">No hay Estudios</span>
+                <div class="container">
+                  <div class="" id="root"></div>
+                  <div class="buttons-container">
+                    <button class="btn addStudy" >
+                      <span class="ti-agenda"></span>
+                      <span>Agregar Estudios</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <% }else{ %>
+                <% estudios.forEach((estudio)=>{%>
+                  <tr>
+                    <td>
+                      <%= estudio.professional_title %>
+                    </td>
+                    <td>
+                      <%= estudio.institute %>
+                    </td>
+                    <td>
+                      <%= estudio.study_level %>
+                    </td>
+                    <td>
+                      <%= estudio.graduation %>
+                    </td>
+                    <td>
+                      <span class="ti-pencil-alt2"></span>
+                    </td>
+                  </tr>
+                  <% })%>
+                    </tbody>
+                    </table>
+                    <div class="container">
+                      <span class="col-4">No hay Estudios</span>
+                      <div class="container">
+                        <div class="" id="root"></div>
+                        <div class="container">
+                          <div class="container-left">
+                            <button class="btn AddStudy" >
+                              <span class="ti-agenda"></span>
+                              <span>Agregar Estudios</span>
+                            </button>
+                          </div>
+                          <div class="container-right">
+                            <a href="/egresados/informacion-familiar/<%= egresadoId %>" class="btn btn-primary">Siguiente</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </form>
+            <% }%>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <%- include('../partials/footer'); %>

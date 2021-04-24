@@ -1,0 +1,109 @@
+<%- include('../partials/head'); %>
+
+  <%- include('../partials/sidebar'); %>
+
+  <%- include('../partials/header'); %>
+
+    <main>
+      <h2 class="dash-title">Información Personal</h2>
+      <div class="container">
+        <div class="activity-grid">
+          <div class="activity-card">
+            <div class="form-body-card">
+              <div class="col-3">
+                <span class="title">Nombres:</span>
+                <span>
+                  <%= egresado.name %>
+                </span>
+              </div>
+              <div class="col-3">
+                <span class="title">Apellidos:</span>
+                <span>
+                  <%= egresado.lastname %>
+                </span>
+              </div>
+              <div class="col-3">
+                <span class="title">Genero:</span>
+                <span>
+                  <%= egresado.gender %>
+                </span>
+              </div>
+            </div>
+            <div class="form-body-card">
+              <div class="col-3">
+                <span class="title">Número de Documento:</span>
+                <span>
+                  <%= egresado.id_number %>
+                </span>
+              </div>
+              <div class="col-3">
+                <span class="title">Fecha de Nacimiento:</span>
+                <span>
+                  <%= egresado.birthday %>
+                </span>
+              </div>
+              <div class="col-3">
+                <span class="title">Lugar de Nacimiento:</span>
+                <span>
+                  <%= egresado.city_birth %>
+                </span>
+              </div>
+            </div>
+            <div class="form-body-card">
+              <div class="col-3">
+                <span class="title">Telefono:</span>
+                <span>
+                  <%= egresado.phone %>
+                </span>
+              </div>
+              <div class="col-3">
+                <span class="title">Dirección:</span>
+                <span>
+                  <%= egresado.address %> <%= egresado.neighborhood %> 
+                </span>
+              </div>
+              <div class="col-3">
+                <span class="title">Estado Civil:</span>
+                <span><%= egresado.marital_status %></span>
+              </div>
+            </div>
+            <div class="form-body-card">
+              <div class="col-3">
+                <span class="title">Email:</span>
+                <span>
+                  <%= egresado.email %>
+                </span>
+              </div>              
+            </div>
+            <div class="container">
+              <div class="container-right">
+                <a href="/egresados/informacion-academica/<%= egresado.id %>" id="right" class="btn btn-primary">Siguiente</a>
+              </div>
+            </div>
+          </div>
+          <div class="summary">
+            <div class="summary-card">
+              <div class="summary-single">
+                <span class=""></span>
+                <div>
+                  <h5>5</h5>
+                  <small>Familiares Registrados</small>
+                </div>
+              </div>
+              <div class="summary-single">
+                <span class=""></span>
+                <div>
+                  <h5>1</h5>
+                  <small>Estudios realizados</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>

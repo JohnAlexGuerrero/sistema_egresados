@@ -1,0 +1,111 @@
+<%- include('../partials/head'); %>
+
+  <%- include('../partials/sidebar'); %>
+
+    <%- include('../partials/header'); %>
+
+      <main style="background-color: white;">
+
+        <div class="container">
+          <div class="main-grid">
+            <div class="container-avatar">
+              <div class="avatar">
+                <div class="button-edit-face">
+                  <a href="#" class="btn">
+                    <p>Edit</p>
+                    <span class="ti-face-smile"></span>
+                  </a>
+                </div>
+              </div>
+              <div class="container-name">
+                <h5>JOHN ALEXANDER GUERRERO</h5>
+                <div style="display: flex; justify-content: space-evenly;">
+                  <span class="ti-email"></span>
+                  <h6>johnalexguerrero@gmail.com</h6>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <h2 class="dash-title">Información Personal</h2>
+              <span class="subtitle">Datos Básicos para Cargar el Nuevo Afiliado</span>
+              <hr>
+              <form action="/egresados/insert-egresado" method="post">
+                <div class="group">
+                  <div class="col-3">
+                    <span class="title">Nombre:</span>
+                    <input type="text" class="form-control color-input" autocomplete="off" name="name"
+                      onkeyup="inputUpperCase(this)" required>
+                  </div>
+                  <div class="col-3">
+                    <span class="title">Apellido:</span>
+                    <input type="text" class="form-control color-input" autocomplete="off" name="lastname"
+                      onkeyup="inputUpperCase(this)" required>
+                  </div>
+                </div>
+                <div class="group ">
+                  <div class="col-3">
+                    <span class="title">Genero:</span>
+                    <select class="form-control color-input" name="gender" required>
+                      <option value="Null">Seleccione</option>
+                      <option value="MASCULINO">Masculino</option>
+                      <option value="FEMENINO">Femenino</option>
+                    </select>
+                  </div>
+                  <div class="col-3">
+                    <span class="title">Número de Documento:</span>
+                    <input type="text" class="form-control color-input" autocomplete="off" name="document"
+                      onkeypress='return validateNumber(event)' required>
+                  </div>
+                </div>
+                <div class="group">
+                  <div class="col-3">
+                    <span class="title">Fecha de Nacimiento:</span>
+                    <input type="date" class="form-control color-input" name="birthday" required>
+                  </div>
+                  <div class="col-3">
+                    <span class="title">Lugar de Nacimiento:</span>
+                    <input type="text" class="form-control color-input" placeholder="Ciudad, Departamento"
+                      autocomplete="off" name="citybirth" onkeyup="inputUpperCase(this)" required>
+                  </div>
+                </div>
+                <div class="group">
+                  <div class="col-3">
+                    <span class="title">Dirección:</span>
+                    <input type="text" class="form-control color-input" autocomplete="off" name="address"
+                      onkeyup="inputUpperCase(this)" required>
+                  </div>
+                  <div class="col-3">
+                    <span class="title">Barrio:</span>
+                    <input type="text" class="form-control color-input" autocomplete="off" name="neighborhood"
+                      onkeyup="inputUpperCase(this)" required>
+                  </div>
+                </div>
+                <div class="group">
+                  <div class="col-3">
+                    <span class="title">Telefono:</span>
+                    <input type="text" class="form-control color-input" autocomplete="off" name="phone"
+                      onkeypress="return validateNumber(event)" id="idPhone" required>
+                  </div>
+                  <div class="col-3">
+                    <span class="title">Estado Civil:</span>
+                    <select class="form-control color-input" name="statusmarital" required>
+                      <option value="0">Seleccione</option>
+                      <option value="CASADO(A)">Casado(a)</option>
+                      <option value="SEPARADO(A)">Separado(a)</option>
+                      <option value="SOLTERO(A)">Soltero(a)</option>
+                      <option value="UNION LIBRE">Unión Libre</option>
+                      <option value="MADRE CABEZA DE FAMILIA">Madre Cabeza de Familia</option>
+                      <option value="VIUDO(A)">Viudo(a)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="group">
+                  <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                </div>
+              </form>
+              <hr>
+            </div>
+          </div>
+        </div>
+        <%- include('../partials/footer') %>
+      </main>
